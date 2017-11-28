@@ -12,8 +12,9 @@ const state = {
     for (let i = 0; i < 20; i++) {
         let el = document.createElement('div');
         el.classList.add('light');
-        el.style.setProperty('--x', `${random(window.innerHeight, 0)}px`);
-        el.style.setProperty('--y', `${random(window.innerHeight, 0)}px`);
+        el.style.setProperty('--x', `${random(100, 0)}%`);
+        el.style.setProperty('--y', `${random(100, 0)}%`);
+        el.style.setProperty('--rand', `${Math.random()}`);
         document.body.appendChild(el);
     }
 })();
