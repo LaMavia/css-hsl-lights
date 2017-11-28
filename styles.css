@@ -1,0 +1,37 @@
+:root {
+  --h: 50;
+  --s: 100%;
+  --l: 50%;
+  --x: 50%;
+  --y: 50%;
+  --size: 10vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #1b1b1b;
+}
+label{
+  color: #fff;
+}
+.light {
+  display: block;
+  overflow: visible;
+  position: fixed;
+  top: var(--x);
+  left: var(--y);
+  background-color: hsl(var(--h), var(--s), var(--l));
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  transition: box-shadow 1s 0s linear;
+  box-shadow: 0px 0px var(--size) calc(var(--size) / 1.2) hsl(var(--h), var(--s), var(--l));
+}
