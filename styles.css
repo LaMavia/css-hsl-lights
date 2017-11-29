@@ -4,7 +4,7 @@
   --l: 50%;
   --x: 50%;
   --y: 50%;
-  --size: 10vw;
+  --size: 7vw;
   --rand: 1;
 }
 
@@ -20,19 +20,66 @@ body {
   overflow: hidden;
   background-color: #1b1b1b;
 }
-label{
+
+label,
+input[type="range"] {
   color: #fff;
+  font-size: 5vh;
+  text-shadow: 0px 0px 2px #2c2c2c;
+  display: block;
+  z-index: 9999;
 }
+input[type=range] {
+  height: 26px;
+  -webkit-appearance: none;
+  background-color: transparent;
+  margin: 10px 0;
+  width: 20vw;
+  min-width: 10vh;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #50555C;
+  background: #50555C;
+  border-radius: 14px;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000000;
+  border: 0px solid #000000;
+  height: 20px;
+  width: 40px;
+  border-radius: 12px;
+  background: #529DE1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -3px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #50555C;
+}
+
 .light {
   display: block;
   overflow: visible;
   position: fixed;
-  top: var(--x);
-  left: var(--y);
-  background-color: hsl(var(--h), var(--s), var(--l));
+  top: 0;
+  left: 0;
+  transform: translate(
+    var(--x),
+    var(--y)
+  );
+  z-index: -1;
+  background-color: hsl(var(--h), var(--s), var(--l), 0);
   width: 2px;
   height: 2px;
   border-radius: 50%;
-  transition: box-shadow 1s 0s linear;
-  box-shadow: 0px 0px var(--size) calc(var(--size) / 1.2) hsl(calc(var(--h) * var(--rand)), var(--s), var(--l));
+  transition: box-shadow 1s 0s linear, transform 1s 0s linear;
+  box-shadow: 0px 0px var(--size) calc(var(--size) / 1.1) hsl( calc(var(--h) * var(--rand)), var(--s), var(--l));
 }
